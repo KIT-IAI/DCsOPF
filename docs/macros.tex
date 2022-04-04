@@ -1,0 +1,316 @@
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+\usepackage{xspace}
+\usepackage{cases}
+\usepackage{color}
+\usepackage{graphicx}
+%\usepackage[caption=false]{subfig}
+\usepackage[font=footnotesize]{caption}
+\usepackage[font=footnotesize]{subcaption}
+\usepackage{epstopdf}
+\usepackage{upgreek}
+%\usepackage{tikz}
+%\usetikzlibrary{trees}
+%\usepackage[normalem]{ulem}
+%\usepackage{accents}
+%%\usepackage{makecell}
+%\usepackage{pgfplots}
+%\usepackage{etoolbox}
+%\usepackage{optidef}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{bbold}
+\usepackage[hidelinks]{hyperref}
+\usepackage{soul}
+%\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{blindtext}
+\usepackage{graphicx}
+% \usepackage[bibstyle=numeric,citestyle=numeric-comp, uniquename=false, maxbibnames=6, maxcitenames=2, doi=false, url=false, eprint=false, isbn=false, sorting=none]{biblatex}
+% \renewcommand*{\bibfont}{\footnotesize}
+% \bibliography{lit.bib} % SOMETHING IS WRONG WITH lit.bib
+% \usepackage[table]{xcolor}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{pgf}
+\usepackage{lipsum}
+\usepackage[normalem]{ulem}
+\usepackage{glossaries}
+
+\newcommand{\figwidth}{\linewidth}
+
+\newcommand{\minimize}{\operatorname{minimize}}
+\newcommand{\maximize}{\operatorname{maximize}}
+%\newcommand{\QED}{\hfill \null \scriptsize{$\square$} \normalsize  \null}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{argmin~}}}
+\newcommand{\rank}[1]{rank\left( #1 \right)}
+\newcommand{\image}{im} 
+\newcommand{\mbb}[1]{\mathbb #1}
+\newcommand{\mbf}[1]{\mathbf #1}
+\newcommand{\mcl}[1]{\mathcal #1}
+
+%%\usepackage[style=numeric,citestyle=numeric, uniquename=false,sortcites=true,maxbibnames=6, maxcitenames=2,doi=false, url=false, eprint=false, backend=bibtex]{biblatex}
+%%\bibliography{stochDCSOPF_lit}
+
+\newtheorem{problem}{Problem}
+\newtheorem{ass}{Assumption}
+\newtheorem{defi}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{coro}{Corollary}
+\newtheorem{propo}{Proposition}
+\newtheorem{lemm}{Lemma}
+\newtheorem{stat}{Statement}
+\newtheorem{rema}{Remark}
+\newtheorem{conj}{Conjecture}
+\newtheorem{exmpl}{Example}
+\newtheorem{sett}{Setting}
+
+%\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\unaryminus}{\scalebox{0.5}[1.0]{\( - \)}}
+
+% Remove indentation after special environments
+%\AfterEndEnvironment{rema}{\noindent\ignorespaces}
+%\AfterEndEnvironment{propo}{\noindent\ignorespaces}
+%\AfterEndEnvironment{proof}{\noindent\ignorespaces}
+%%% MACROS
+\newcommand{\iu}{\mathrm{i}}
+\newcommand{\nbus}{N}
+\newcommand{\ngen}{N}
+\newcommand{\ngencal}{\mathcal{N}_{\! g}}
+\newcommand{\ngenp}{N_g^{\mathrm{p}}}
+\newcommand{\nline}{N_l}
+\newcommand{\nxi}{n_\xi}
+\newcommand{\Ybr}{\vec{Y}_{\mathrm{br}}}
+\newcommand{\Bbr}{{B}_{\mathrm{br}}}
+\newcommand{\Ybus}{\vec{Y}_{\mathrm{bus}}}
+\newcommand{\Bbus}{{B}_{\mathrm{bus}}}
+\newcommand{\Bbusred}{{\hat{B}}_{\mathrm{bus}}}
+\newcommand{\Gbus}{{G}_{\mathrm{bus}}}
+\newcommand{\Slbus}{C^{\mathrm{sl}}}
+\newcommand{\slbus}{c^{\mathrm{sl}}_i}
+\newcommand{\Pqbus}{C^{\mathrm{pq}}}
+\newcommand{\pqbus}{c^{\mathrm{pq}}_i}
+\newcommand{\Pvbus}{C^{\mathrm{pv}}}
+\newcommand{\pvbus}{c^{\mathrm{pv}}_i}
+\newcommand{\Slbuspce}{\boldsymbol{C}^{\mathrm{sl}}}
+\newcommand{\slbuspce}{\boldsymbol{c}^{\mathrm{sl}}_i}%
+\newcommand{\Pqbuspce}{\boldsymbol{C}^{\mathrm{pq}}}
+\newcommand{\pqbuspce}{\boldsymbol{c}^{\mathrm{pq}}_i}
+\newcommand{\Pvbuspce}{\boldsymbol{C}^{\mathrm{pv}}}
+\newcommand{\pvbuspce}{\boldsymbol{c}^{\mathrm{p}}_i}
+\newcommand{\expi}[1]{\mathrm{e}^{\mathrm{i}#1}}
+\newcommand{\imag}{\mathrm{i}}
+
+\newcommand{\rsd}{s}
+
+\newcommand{\iplain}{i}
+\newcommand{\iRV}{\rv{\iplain}}
+
+\newcommand{\vplain}{v}
+\newcommand{\vre}{\vplain^{\text{re}}}
+\newcommand{\vreRV}{\rv{\vplain}^{\text{re}}}
+\newcommand{\vRV}{\rv{\vplain}}
+
+\newcommand{\vrebold}{\boldsymbol{\vplain}^{\mathrm{re}}}
+\newcommand{\vim}{\vplain^{\text{im}}}%
+\newcommand{\vimRV}{\rv{\vplain}^{\text{im}}}
+\newcommand{\vimbold}{\boldsymbol{\vplain}^{\mathrm{im}}}
+
+
+\newcommand{\horizon}{T}
+\newcommand{\pnet}{p}
+\newcommand{\gen}{u}
+\newcommand{\load}{d}
+\newcommand{\renew}{r}
+\newcommand{\storage}{s}
+\newcommand{\energy}{e}
+\newcommand{\lineflow}{c}
+
+\newcommand{\caseNoStorage}{\textsc{S}1\xspace}
+\newcommand{\caseStorage}{\textsc{S}2\xspace}
+\newcommand{\caseStorageWithVariance}{\textsc{S}3\xspace}
+
+
+
+\newcommand{\Load}{\MakeUppercase{\load}}
+\newcommand{\Gen}{\MakeUppercase{\gen}}
+\newcommand{\Storage}{\MakeUppercase{\storage}}
+
+\newcommand{\mc}{\textsc{mc}\xspace}
+\newcommand{\ptdf}{\textsc{ptdf}\xspace}
+\newcommand{\ptdfmat}{\Phi}
+%\newcommand{\ptdfmat}{\textsc{ptdf}\xspace}
+\newcommand{\basisfun}{\psi}
+\newcommand{\varsqrt}[1]{S_{#1}}
+
+%% Inequalities and Equalities
+\newcommand{\ecset}{\mathcal{E}}
+\newcommand{\ecmat}{E}
+\newcommand{\ecvec}{e}
+\newcommand{\icset}{\mathcal{F}}
+\newcommand{\icmat}{F}
+\newcommand{\icub}{\bar{f}}
+\newcommand{\iclb}{\underline{f}}
+
+\newcommand{\ecsetspec}[2]{\ecset_{\mathrm{#1}}^{\mathrm{#2}}}
+\newcommand{\icsetspec}[2]{\icset_{\mathrm{#1}}^{\mathrm{#2}}}
+
+\newcommand{\adjustlength}{-4.5mm}
+\newcommand{\tablecaptionsep}{-2mm}
+\renewcommand{\arraystretch}{1.15}
+%
+%% PCE Macros
+\newcommand{\scalarptwo}{\langle \phi_{l_1} {,} \phi_k \rangle}
+\newcommand{\scalarpthree}{\langle \phi_{l_1} \phi_{l_2}{,} \phi_k\rangle}
+\newcommand{\scalarpfour}{\langle \phi_{l_1} \phi_{l_2} \phi_{l_3}{,} \phi_k\rangle}
+\newcommand{\scalarpfive}{\langle \phi_{l_1} \phi_{l_2} \phi_{l_3} \phi_{l_4}{,} \phi_k\rangle}
+\newcommand{\scalarpsix}{\langle \phi_{l_1} \phi_{l_2} \phi_{l_3} \phi_{l_4} \phi_{l_5}{,} \phi_k\rangle}
+\newcommand{\pdf}{\textsc{pdf}\xspace}
+\newcommand{\pdfs}{\textsc{pdf}s\xspace}
+\newcommand{\cdf}{\textsc{cdf}\xspace}
+%\renewcommand{\cdf}{\textsc{cdf}\xspace}
+\newcommand{\ltwo}{\mathrm{L}^2}
+\newcommand{\ltwospace}{\mathcal{L}^2(\Omega_\xi, \mathcal{F}_\xi, \mu_\xi)}
+\newcommand{\Ltwospace}{L^2(\Omega,\mathbb{P};\mathbb{R})}
+\newcommand{\Ltwospacern}[1]{\mathcal{L}^2 (\Delta,\mathbb{R}^{#1})}
+%\newcommand{\Ltwospacen}[1]{\mathrm{L}_{#1}^2(\Omega_n,\mu_n;\mathbb{R})}
+
+\newacronym{gp}{GP}{Gaussian process}
+
+\newcommand{\gps}{\textsc{gp}s\xspace}
+\newcommand{\opf}{\textsc{opf}\xspace}
+\newcommand{\opfs}{\textsc{opf}s\xspace}
+\newcommand{\sopf}{s\textsc{opf}\xspace}
+\newcommand{\dc}{\textsc{dc}\xspace}
+\newcommand{\ac}{\textsc{ac}\xspace}
+\newcommand{\acopf}{\textsc{ac}-\textsc{opf}\xspace}
+\newcommand{\dcopf}{\textsc{dc}-\textsc{opf}\xspace}
+\newcommand{\dcsopf}{\textsc{dc}-\textsc{sopf}\xspace}
+\newcommand{\rvopf}{\textsc{rv}-\sopf}
+\newcommand{\spopf}{\textsc{sp}-\sopf}
+\newcommand{\pce}{\textsc{pce}\xspace}
+\newcommand{\pces}{{\textsc{pce}}s\xspace}
+\newcommand{\robustdistribution}{\mathfrak{L}}
+\newcommand{\cc}{\textsc{cc}}
+\newcommand{\ccs}{\textsc{cc}s\xspace}
+\newcommand{\ccopf}{\cc-\opf}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\mpc}{\textsc{mpc}\xspace}
+\newcommand{\qp}{\textsc{qp}\xspace}
+\newcommand{\qps}{\textsc{qp}s\xspace}
+\newcommand{\lti}{\textsc{lti}\xspace}
+\newcommand{\lqr}{\textsc{lqr}\xspace}
+\newcommand{\socp}{\textsc{socp}\xspace}
+\newcommand{\socps}{\textsc{socp}s\xspace}
+\newcommand{\stda}{\textsc{std}\xspace}
+\newcommand{\stdsa}{\textsc{std}s\xspace}
+\newcommand{\rvtext}{\textsc{rv}\xspace}
+\newcommand{\supplb}[1]{#1^{\text{lb}}}
+\newcommand{\suppub}[1]{#1^{\text{ub}}}
+
+
+
+\newcommand{\Jev}[1]{J^{\text{e}}(#1)}
+\newcommand{\Jvar}[1]{J^{\text{v}}(#1)}
+\newcommand{\normaldist}{\mathsf{N}}
+\newcommand{\betadist}{\mathsf{B}}
+\newcommand{\mean}[2]{\mu_{#2}^{\text{#1}}}
+\newcommand{\std}[2]{\sigma_{#2}^{\text{#1}}}
+
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+%\newcommand{\rv}[1]{{\renewcommand{\sfdefault}{lmss} \renewcommand{\familydefault}{\sfdefault} \text{#1} }}
+%\newcommand{\rvs}[1]{{\renewcommand{\sfdefault}{lmss} \renewcommand{\familydefault}{\sfdefault} \text{#1}\! }}
+%\newcommand{\rmat}[1]{{\renewcommand{\sfdefault}{lmss} \renewcommand{\familydefault}{\sfdefault} {\textbf{#1}} }}
+\newcommand{\rv}[1]{\mathsf{#1}}
+\newcommand{\rvs}[1]{\mathsf{#1}\!}
+\newcommand{\rmat}[1]{\bs{\mathsf{#1}}}
+
+\newcommand{\ev}[1]{\mathbb{E}(#1)}
+\newcommand{\evbig}[1]{\mathbb{E}\Big(#1\Big)}
+\newcommand{\var}[1]{\mathbb{V}(#1)}
+\newcommand{\cov}[1]{\operatorname{Cov}(#1)}
+%\newcommand{\pr}[1]{ {\renewcommand{\sfdefault}{lmss} \renewcommand{\familydefault}{\sfdefault}{\text{Pr}}}[#1] }) }
+\newcommand{\prob}[1]{\mathbb{P}( #1 )}
+\newcommand{\prbig}[1]{ {{\mathrm{P}}}\Big(#1\Big) }
+
+
+\newcommand{\pdffun}{f}
+\newcommand{\cdffun}{F}
+\newcommand{\pvar}{u}
+\newcommand{\pvarup}{\expandafter\uppercase\expandafter{\pvar}}
+\newcommand{\dvar}{\theta}
+\newcommand{\pfix}{d}
+\newcommand{\pfixup}{\expandafter\uppercase\expandafter{\pfix}}
+\newcommand{\actpowerconstraints}{\mathcal{U}}
+\newcommand{\lineflowconstraints}{\mathcal{P}_l}
+\newcommand{\prv}[2]{\rv{p}_{\text{#1},#2}}
+\newcommand{\stochgerm}[1]{\rv{\xi}_{\text{#1}}}
+\newcommand{\stochgermsub}[2]{\rv{\xi}_{\text{#1},#2}}
+
+\newcommand{\etau}[1]{\eta^{\text{u}}_{#1}}
+\newcommand{\etao}[1]{\eta^{\text{o}}_{#1}}
+
+\newcommand{\led}{\hat{d}}
+\newcommand{\her}[1]{\mathrm{He}_{#1}}
+\newcommand{\eaug}[2]{\tilde{e}_{#2}^{#1}}
+\newcommand{\proj}[2]{\mathrm{P}_{\!#2}#1}
+\newcommand{\jac}[3]{P_{#1}^{#2,#3}}
+\newcommand{\taylor}[2]{\mathrm{T}_{\!#1}(#2)}
+\newcommand{\remainder}[2]{\mathrm{R}_{#1}(#2)}
+\newcommand{\ode}{\textsc{ode}\xspace}
+\newcommand{\kkt}{\textsc{kkt}\xspace}
+\newcommand{\Nx}{n_{x}}
+\newcommand{\Ncon}{n_{\text{con}}}
+\newcommand{\Nact}{n_{\text{act}}}
+\newcommand{\licq}{\textsc{licq}\xspace}
+\newcommand{\Aact}{A_{\text{act}}}
+\newcommand{\Mact}{M_{\mathcal{A}}}
+
+
+%% Lists
+%\newlist{mylist}{enumerate}{1}
+%\setlist[mylist]{label=\textsc{c}\oldstylenums{\arabic*}}
+%\newlist{mylistlist}{enumerate}{1}
+%\setlist[mylistlist]{label=\textsc{q}\oldstylenums{\arabic*}}
+
+\newcommand{\fillcolor}{black!7.5}
+
+\DeclareMathOperator*{\Motimes}{\text{\raisebox{0.25ex}{\scalebox{0.8}{$\bigotimes$}}}}
+
+\newcommand\munderbar[1]{%
+	\underaccent{\bar}{#1}}
+	
+	
+\newcommand{\figone}{Figure 2\xspace}
+\newcommand{\figtwo}{Figure 3\xspace}
+
+\definecolor{till}{rgb}{.1,.4,.9}
+\definecolor{timm}{rgb}{1.0,.0,1.0} 
+\definecolor{veit}{rgb}{0.,.8,.4}
+\definecolor{revised}{rgb}{.2,.8,.1}
+
+\def\till{\textcolor{till}}
+\def\timm{\textcolor{timm}}
+\newcommand{\added}[1]{\textcolor{added}{#1}}
+\newcommand{\revised}[1]{\textcolor{revised}{#1}}
+
+\renewcommand{\labelitemi}{--}
+\renewcommand{\labelitemii}{-}
+
+%\newlist{mypcelist}{enumerate}{1}
+%\setlist[mypcelist]{label=\textsc{p}\oldstylenums{\arabic*}}
+%\newlist{myinglist}{enumerate}{1}
+%\setlist[myinglist]{label=\textsc{i}\oldstylenums{\arabic*}}
+%\newlist{mysteplist}{enumerate}{1}
+%\setlist[mysteplist]{label=Step\xspace\oldstylenums{\arabic*}, leftmargin=35pt}
+
+\newacronym{ess}{ESS}{energy storage system}
+\newacronym{cc}{CC}{chance-constrained}
+\newacronym{opf}{OPF}{optimal power flow}
+\newacronym{socp}{SOCP}{second-order cone problem}
+\newacronym{res}{RES}{renewable energy source}
