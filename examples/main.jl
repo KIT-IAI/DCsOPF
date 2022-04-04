@@ -51,33 +51,33 @@ params = Dict()
 # case 5
 unc_set, stor_set = get_unc_stor_sets("5", 3, 2)
 stor_set = append!(stor_set, [last(stor_set)])
-params["5_artificial"] = CaseParams("5", unc_set, stor_set, true, true, false, true, 1., 0.5, 8., 6, 0.8)
-params["5_volatile"] = CaseParams("5", unc_set, stor_set, true, true, false, false, 1., 1., 10., 10, 0.8)
+params["5_artificial"] = CaseParams("5", unc_set, stor_set, false, true, 1., 0.5, 8., 6, 0.8)
+params["5_volatile"] = CaseParams("5", unc_set, stor_set, false, false, 1., 1., 10., 10, 0.8)
 
 # case 39
 unc_set, stor_set = get_unc_stor_sets("39", 8, 8)
 # unc_set, stor_set = [], [[19,23,22,29,2,25]]
-# params["39_artificial"]   = CaseParams("39", unc_set, stor_set, true, true, false, true, 1., 2., 20., 6, 0.2)
-params["39_volatile"]   = CaseParams("39", unc_set, stor_set, true, true, false, false, 1., 1., 10., 100, 0.2) # false, false, 1./1.5, 1.5, 10./1.2-1.7, 5, 0.4
+# params["39_artificial"]   = CaseParams("39", unc_set, stor_set, false, true, 1., 2., 20., 6, 0.2)
+params["39_volatile"]   = CaseParams("39", unc_set, stor_set, false, false, 1., 1., 10., 100, 0.2) # false, false, 1./1.5, 1.5, 10./1.2-1.7, 5, 0.4
 
 # case 57
 unc_set, stor_set = get_unc_stor_sets("57", 8, 8)
 # unc_set, stor_set = [[12,8,9,6,1,16,17,3,47,18,15]], [[50,53,49,51,12]]
 # unc_set, stor_set = [[12,8,9,6,1,16,17]], [[50,53,49,51,12]]
-# params["57_artificial"]  = CaseParams("57", unc_set, stor_set, true, true, false, true, 1., 1., 1., 4, 0.2)
-params["57_volatile"]  = CaseParams("57", unc_set, stor_set, true, true, false, false, 1., 1., 20., 100, 0.8)
-params["57_volatile"]  = CaseParams("57", unc_set, stor_set, true, true, false, false, 1., 0.5, 20., 100, 0.8) # for 4
-params["57_volatile"]  = CaseParams("57", unc_set, stor_set, true, true, false, false, 2., 0.5, 20., 100, 0.8) # for 4
+# params["57_artificial"]  = CaseParams("57", unc_set, stor_set, false, true, 1., 1., 1., 4, 0.2)
+params["57_volatile"]  = CaseParams("57", unc_set, stor_set, false, false, 1., 1., 20., 100, 0.8)
+params["57_volatile"]  = CaseParams("57", unc_set, stor_set, false, false, 1., 0.5, 20., 100, 0.8) # for 4
+params["57_volatile"]  = CaseParams("57", unc_set, stor_set, false, false, 2., 0.5, 20., 100, 0.8) # for 4
 
 # case 118
 unc_set, stor_set = get_unc_stor_sets("118", 8, 8)
 unc_set, stor_set =  [[59,116,90,80,54,42,15,49,56,60]], [[11,62,27,78,112]]
-params["118_volatile"] = CaseParams("118", unc_set, stor_set, true, true, false, false, 1., 1., 1., 4, 0.2)
+params["118_volatile"] = CaseParams("118", unc_set, stor_set,false, false, 1., 1., 1., 4, 0.2)
 
 # case 300
 unc_set, stor_set = get_unc_stor_sets("300", 8, 8)
 # unc_set, stor_set = 
-params["300_volatile"] = CaseParams("300", unc_set, stor_set, true, true, false, false, 1., 40., 40., 100, 0.2)
+params["300_volatile"] = CaseParams("300", unc_set, stor_set, false, false, 1., 40., 40., 100, 0.2)
 
 ##############################################################################
 #### OPTIMIZATION
