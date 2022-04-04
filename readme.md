@@ -1,6 +1,7 @@
 ﻿# Analytical Uncertainty Propagation for Multi-Period Stochastic Optimal Power Flow
 
 *How can we combine stochastic DC optimal power flow with Gaussian processes?*
+
 This repository provides both the finished [paper](docs/main.pdf) and a Julia package to tackle this question.
 
 
@@ -109,4 +110,4 @@ For the Gaussian process regression we use [GPflow](https://github.com/GPflow/GP
 The wind data is taken from [Zenodo](https://zenodo.org/record/4682697#.YksQ2OdCTmG) containing hourly data from 2014 to 2021. 
 
 ## Questions?
-__Ask us!__ Write to *rebecca.bauer@kit.edu*.
+__Write to us!__ 
