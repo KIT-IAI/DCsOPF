@@ -68,23 +68,18 @@ To add a new case (network) the MatPower casefile `case.m` with the network topo
 | Description | Example | Note |
 | --- | --- | --- |
 | [Matpower](https://matpower.org/) case file | [`casefiles/case5.m`](examples/casefiles/case5.m) | Has to be of a specific [caseformat](https://matpower.org/docs/ref/matpower5.0/caseformat.html) e.g. [IEEE case5](https://matpower.org/docs/ref/matpower5.0/case5.html) |
-| Power transfer distribution factor matrix | `casefiles/case5_PTDF.mat` | can be extracted out of `case.m` with MATLAB via `mpc = loadcase('<case>.m'); ptdf = makePTDF(mpc); save('<case>_PTDF.mat'), 'ptdf');`. |
-| GP wind data (covariance matrix) | [data/CovMatrix.mat](examples/data/CovMatrix_artificial.mat) | created with GPR (Gaussian process regression), e.g. with the [GPflow](https://github.com/GPflow/GPflow.git) package. |
-
-Additionally, we can modify the case by making a few assumptions (see `main.jl`):
-- wind farm (uncertainties) locations
-- storage locations
-- magnitude of load and wind as well as amount of uncertainty (variance)
+| Power transfer distribution factor matrix | [`casefiles/case5_PTDF.mat`](examples/casefiles/case5_PTDF.mat) | The PTDF can be extracted out of `case.m` with MATLAB using `mpc = loadcase('<case>.m'); ptdf = makePTDF(mpc); save('<case>_PTDF.mat'), 'ptdf');`. |
+| GP wind data (covariance matrix) | [data/CovMatrix.mat](examples/data/CovMatrix_artificial.mat) | The GP (Gaussian process) is created with GPR (Gaussian process regression), e.g. with the [GPflow](https://github.com/GPflow/GPflow.git) package. |
 
 
-### Gaussian processes (covariance matrices)
+#### Gaussian processes (covariance matrices)
 
 The wind forecast is given in form of a covariance matrix, e.g. [`CovMatrix_artificial.mat`](examples/data/CovMatrix_artificial.mat), that contains the mean and variance of the forecast. If we forecast over `n` time steps, then the files are:
 - `mu_post`: mean (size `nx1`)
 - `Lpost`: variance (size `nxn`, lower triangular matrix)
 Letting `Σ = Lpost * Lpost'`, then `(mu_post, Σ)` is a Gaussian process over `n` time steps.
 
-## Add case in main.jl
+#### Add case in main.jl
 
 To test the code with your own network add the parameters for another case with the following code:
 
