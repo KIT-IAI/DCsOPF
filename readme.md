@@ -2,7 +2,7 @@
 
 *How can we combine stochastic DC optimal power flow with Gaussian processes?*
 
-This repository provides both the finished [paper](docs/Article.pdf) and a Julia package to tackle this question.
+This repository provides both the finished [paper](docs/Article.pdf) ([ArXiv](https://arxiv.org/abs/2204.05883)) and a Julia package to tackle this question.
 
 
 
