@@ -1,0 +1,58 @@
+Turkish Transmission Network
+
+Explanations:
+Cities/Counties/Substations 	- Every city (total 82) has several counties (total 970).
+City/Distribution Company (DC) 	- Every DC (21) provides for several cities (82).
+Substation/Source 		- Every substation (116) can be a suitable location for a power plant (1231).
+Transmission Lines/Substation 	- Every transmission line (190) runs between two substations (116).
+Power Plant/Source Type*	- Every power plant (1231) has exactly one source type (4?).
+Substation/City_County		- Every substation (116) is defined by a CITY_COUNTY. There are less substations (116) than counties (970) but more than cities (82).
+Lat/Lon				- Geo-data is available for all substations and counties.
+
+* Source type = Thermal, Hydro, Wind, Solar
+Sources = Biomass/Natural Gas/Coal/Naphta/Fuel-oil/Lignite/LPG/other (Thermal), (no other).
+
+==============================
+GIS Files
+==============================
+(File)					: (#)	: (description)
+Border					: 1	: ID_0 235 ??
+Border-City				: 81	: ID_0 235 ??
+Border-County				: 928	: ID_0 235 ??
+County					: 970	: Lat/Lon + Peak Load + Inst_source_type
+Power-island Assignment			: 970	: Closest Substation
+Substation				: 116	: Lat/Lon + Peak Load + Inst_source_type
+Transmission Line			: 190 	: node1/node2 + line type
+
+==============================
+DATA
+==============================
+------------------------------
+DCs and Cities
+------------------------------
+Cities monthly demand			: 82 	: + DC
+Cities hourly demand 			: 82	: 
+
+Distribution Companies (DC) hourly 	: 21	: (production?)
+
+Power Plants (City)			: 1231	: source type + source + city
+
+------------------------------
+Reduced Turkish Power System
+------------------------------
+Substations hourly demand		: 116 	: 
+Substations peak load			: 116	: 
+
+Substations capacities			: 116 	: per source type + Lat/Lon
+Substations suitable loc.		: 116	: suitability per source type (yes/no)
+
+Transmission lines 			: 190	: node1/node2 + line type
+Transmission line types			: 4	: (ratings, etc.)
+
+------------------------------
+Counties Hourly Demand
+------------------------------
+Counties hourly demand			: 970 	: 
+
+Counties capacities			: 970	: per source type
+Counties population			: 970 	: per county + population multiplier + Lat/Lon
