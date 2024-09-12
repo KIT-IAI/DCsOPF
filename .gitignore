@@ -1,6 +1,9 @@
 # Ignore All (xlsx) files
 *.xlsx
 
+# ignore PowerModelsParsing Package
+src/PowerModelsParsing.jl
+
 # also result graphics
 examples/graphics/
 
