@@ -1,0 +1,11 @@
+# Ignore All (xlsx) files
+*.xlsx
+
+# also result graphics
+examples/graphics/
+
+# only leave basic results for 12 time steps in the repository
+examples/results/24_time_steps/
+
+# files that might still be useful but are old
+examples/OLD_files/
